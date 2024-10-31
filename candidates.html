@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Wybór kandydatów</title>
+</head>
+<body>
+    <div class="candidates-container">
+        <h1>Wybierz kandydata</h1>
+        <form id="voteForm">
+            <div class="candidate">
+                <input type="radio" id="candidate1" name="candidate" value="Kandydat 1" required>
+                <label for="candidate1">Kandydat 1</label>
+            </div>
+            <div class="candidate">
+                <input type="radio" id="candidate2" name="candidate" value="Kandydat 2">
+                <label for="candidate2">Kandydat 2</label>
+            </div>
+            <div class="candidate">
+                <input type="radio" id="candidate3" name="candidate" value="Kandydat 3">
+                <label for="candidate3">Kandydat 3</label>
+            </div>
+            <div class="candidate">
+                <input type="radio" id="candidate4" name="candidate" value="Kandydat 4">
+                <label for="candidate4">Kandydat 4</label>
+            </div>
+            <div class="candidate">
+                <input type="radio" id="candidate5" name="candidate" value="Kandydat 5">
+                <label for="candidate5">Kandydat 5</label>
+            </div>
+            <button type="submit">Oddaj głos</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
