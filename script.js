@@ -1,18 +1,21 @@
-// Inicjalizacja głosów
-let votes = {
-    "Kandydat 1": 0,
-    "Kandydat 2": 0,
-    "Kandydat 3": 0,
-    "Kandydat 4": 0,
-    "Kandydat 5": 0
-};
+document.getElementById("loginForm")?.addEventListener("submit", function (event) {
+    event.preventDefault(); // Zapobiega domyślnemu działaniu formularza
+    const token = document.getElementById("token").value;
+
+    // Przykład prostego sprawdzenia tokena
+    const validTokens = ["12345"]; // Zmień na swoje tokeny
+
+    if (validTokens.includes(token)) {
+        window.location.href = "candidates.html"; // Przekierowanie do strony z kandydatami
+    } else {
+        alert("Nieprawidłowy token!"); // Informacja o błędzie
+    }
+});
 
 // Nasłuchiwanie na formularz głosowania
 document.getElementById("voteForm")?.addEventListener("submit", function (event) {
     event.preventDefault();
     const candidate = document.querySelector('input[name="candidate"]:checked').value;
-
-    console.log("Oddany głos na: " + candidate); // Dodaj to, aby sprawdzić, co jest wysyłane
 
     // Zapisz głos do votes.json
     fetch('update_votes.php', {
@@ -22,9 +25,8 @@ document.getElementById("voteForm")?.addEventListener("submit", function (event)
         },
         body: JSON.stringify({ candidate })
     })
-    .then(response => response.json()) // Dodaj to, aby odczytać odpowiedź jako JSON
+    .then(response => response.json())
     .then(data => {
-        console.log("Odpowiedź z serwera: ", data); // Dodaj to, aby sprawdzić odpowiedź z serwera
         if (data.success) {
             // Przekierowanie do strony z podziękowaniem
             window.location.href = "thank-you.html";
