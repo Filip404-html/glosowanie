@@ -1,105 +1,75 @@
-/* Ogólne style */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   color: #333;
-}
-
-/* Kontener */
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  width: 400px;
   text-align: center;
 }
 
-/* Nagłówki */
-h1, h2 {
-  color: #2c3e50;
-  font-weight: bold;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Amerykański styl przycisku */
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  color: white;
-  background: #1a73e8; /* Niebieski w stylu flagi USA */
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px 0;
-  text-decoration: none;
-  transition: background 0.3s;
+h2 {
+  font-size: 24px;
 }
 
-.button:hover {
-  background: #0b51a1;
-}
-
-/* Styl formularzy i etykiet */
-label {
-  font-weight: bold;
-  color: #333;
-}
-
-input[type="text"], select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
+form {
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
 }
 
-button[type="submit"] {
-  background-color: #e74c3c; /* Czerwony w stylu flagi USA */
+input[type="text"] {
+  padding: 10px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #3498db;
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 16px;
 }
 
-button[type="submit"]:hover {
-  background-color: #c0392b;
+button:hover {
+  background-color: #2980b9;
 }
 
-/* Styl tokenów i listy */
-#token-output {
-  font-size: 18px;
-  color: #3498db; /* Niebieski akcent */
-  margin-top: 10px;
+#vote-options {
+  display: none;
 }
 
-#token-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#token-list li {
-  padding: 8px;
-  background: #f9f9f9;
+.candidate {
+  background-color: #fff;
   border: 1px solid #ddd;
-  margin: 4px 0;
-  border-radius: 4px;
+  padding: 20px;
+  margin: 20px;
+  display: inline-block;
+  width: 45%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.candidate-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
 #vote-message {
-  font-size: 16px;
-  font-weight: bold;
-  color: #27ae60; /* Zielony akcent dla sukcesu */
-  margin-top: 20px;
+  font-size: 18px;
+  color: #e74c3c;
+}
+
+button:active {
+  background-color: #2980b9;
+}
+
+.thankyou-animation {
+  font-size: 24px;
+  color: #2ecc71;
 }
