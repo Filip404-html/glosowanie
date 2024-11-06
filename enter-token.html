@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wprowadź Token</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Wprowadź swój token</h2>
+    <form id="token-form" onsubmit="return validateToken()">
+      <label for="token-input">Token:</label>
+      <input type="text" id="token-input" required>
+      <button type="submit">Sprawdź i Kontynuuj</button>
+    </form>
+    <p id="message"></p>
+    <a href="index.html">Powrót do Strony Głównej</a>
+  </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
