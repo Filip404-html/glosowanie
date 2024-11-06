@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Głosowania</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Oddaj swój głos</h2>
+    <form id="voting-form" onsubmit="return submitVote()">
+      <label for="token-input">Wprowadź token:</label>
+      <input type="text" id="token-input" required>
+      
+      <label for="candidate">Wybierz kandydata:</label>
+      <select id="candidate" required>
+        <option value="candidateA">Kandydat A</option>
+        <option value="candidateB">Kandydat B</option>
+      </select>
+
+      <button type="submit">Głosuj</button>
+    </form>
+    <p id="vote-message"></p>
+    <a href="index.html" class="button">Powrót do Strony Głównej</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
