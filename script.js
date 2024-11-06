@@ -1,39 +1,31 @@
-// Funkcja generowania tokenów
-function generateToken() {
-  const token = Math.random().toString(36).substr(2, 8).toUpperCase();
-  document.getElementById("token-output").innerText = token;
+// Lista tokenów i głosów - symulacja danych
+const tokens = ["TOKEN123", "TOKEN456", "TOKEN789"]; // Przykładowe tokeny
+let votes = {
+  "Kamala Harris": 0,
+  "Donald Trump": 0
+};
 
-  // Dodawanie tokenu do listy (symulacja dodania do pliku JSON)
-  const tokenList = document.getElementById("token-list");
-  const listItem = document.createElement("li");
-  listItem.innerText = token;
-  tokenList.appendChild(listItem);
+// Funkcja walidująca token
+function validateToken() {
+  const tokenInput = document.getElementById("token-input").value;
+  const messageElement = document.getElementById("message");
+
+  if (tokens.includes(tokenInput)) {
+    // Ukrywa formularz tokenu, pokazuje opcje głosowania
+    document.getElementById("token-form").style.display = "none";
+    document.getElementById("vote-options").style.display = "block";
+    messageElement.innerText = "Token prawidłowy! Wybierz kandydata.";
+  } else {
+    messageElement.innerText = "Nieprawidłowy token! Spróbuj ponownie.";
+  }
+  return false;
 }
 
-// Funkcja głosowania
-function submitVote() {
-  const token = document.getElementById("token-input").value;
-  const candidate = document.getElementById("candidate").value;
+// Funkcja rejestrująca głos
+function submitVote(candidate) {
+  // Zwiększa liczbę głosów dla wybranego kandydata
+  votes[candidate]++;
 
-  fetch('tokens.json')
-    .then(response => response.json())
-    .then(data => {
-      const validTokens = data.tokens;
-
-      if (validTokens.includes(token)) {
-        document.getElementById("vote-message").innerText = `Głos oddany na: ${candidate}`;
-        
-        // Symulacja: usunięcie tokenu po użyciu
-        const tokenIndex = validTokens.indexOf(token);
-        validTokens.splice(tokenIndex, 1);
-        
-      } else {
-        document.getElementById("vote-message").innerText = "Nieprawidłowy lub użyty token!";
-      }
-    })
-    .catch(error => {
-      console.error("Błąd przy ładowaniu tokenów:", error);
-    });
-
-  return false;
+  // Po oddaniu głosu, przekierowanie do strony podziękowania
+  window.location.href = "thankyou.html";
 }
