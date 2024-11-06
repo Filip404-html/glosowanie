@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Głosowanie na Prezydenta USA 2024</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Oddaj swój głos na Prezydenta USA 2024</h2>
+    
+    <!-- Formularz wprowadzania tokenu -->
+    <form id="token-form" onsubmit="return validateToken()">
+      <label for="token-input">Wprowadź swój token:</label>
+      <input type="text" id="token-input" required>
+      <button type="submit">Sprawdź i kontynuuj</button>
+    </form>
 
+    <!-- Sekcja wyboru kandydata - domyślnie ukryta -->
+    <div id="vote-options" style="display:none;">
+      <h3>Wybierz swojego kandydata:</h3>
+
+      <!-- Sekcja dla Donalda Trumpa -->
+      <div class="candidate">
+        <img src="trump.jpg" alt="Donald Trump" class="candidate-image">
+        <h4>Donald Trump</h4>
+        <p>Donald Trump to były prezydent USA, który ubiega się o reelekcję w 2024 roku.</p>
+        <button onclick="submitVote('Donald Trump')">Oddaj głos na Trumpa</button>
+      </div>
+
+      <!-- Sekcja dla Kamali Harris -->
+      <div class="candidate">
+        <img src="harris.jpg" alt="Kamala Harris" class="candidate-image">
+        <h4>Kamala Harris</h4>
+        <p>Kamala Harris to aktualna wiceprezydentka USA, która kandyduje na prezydenta w 2024 roku.</p>
+        <button onclick="submitVote('Kamala Harris')">Oddaj głos na Harris</button>
+      </div>
+    </div>
+
+    <p id="vote-message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
