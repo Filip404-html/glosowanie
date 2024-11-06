@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administracyjny</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Panel Administracyjny</h2>
+    
+    <!-- Sekcja zarządzania głosami -->
+    <h3>Wyniki Głosowania</h3>
+    <table>
+      <tr>
+        <th>Kandydat</th>
+        <th>Liczba głosów</th>
+      </tr>
+      <tr>
+        <td>Donald Trump</td>
+        <td id="trump-votes">0</td>
+      </tr>
+      <tr>
+        <td>Kamala Harris</td>
+        <td id="harris-votes">0</td>
+      </tr>
+    </table>
+
+    <!-- Sekcja zarządzania tokenami -->
+    <h3>Zarządzanie Tokenami</h3>
+    <p>Aktualnie dostępne tokeny:</p>
+    <ul id="token-list">
+      <!-- Lista tokenów admina -->
+    </ul>
+
+    <form id="add-token-form" onsubmit="return addToken()">
+      <label for="new-token">Nowy token:</label>
+      <input type="text" id="new-token" required>
+      <button type="submit">Dodaj Token</button>
+    </form>
+
+    <a href="index.html" class="button">Powrót do Strony Głównej</a>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
