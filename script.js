@@ -8,8 +8,6 @@ function generateToken() {
   const listItem = document.createElement("li");
   listItem.innerText = token;
   tokenList.appendChild(listItem);
-
-  // W rzeczywistości token powinien być wysyłany do backendu, aby go zapisać w tokens.json.
 }
 
 // Funkcja głosowania
@@ -29,7 +27,6 @@ function submitVote() {
         const tokenIndex = validTokens.indexOf(token);
         validTokens.splice(tokenIndex, 1);
         
-        // W prawdziwym systemie należy wysłać zaktualizowaną listę tokenów do backendu, aby zapisać zmiany.
       } else {
         document.getElementById("vote-message").innerText = "Nieprawidłowy lub użyty token!";
       }
